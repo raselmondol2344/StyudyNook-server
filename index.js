@@ -24,7 +24,7 @@ async function run() {
     await client.connect();
 
     const db = client.db("studyNook")
-    const  roomsCollection = db.collection("rooms")
+    const  roomsCollection = db.collection("rooms")   
 
   
 
@@ -60,7 +60,7 @@ async function run() {
         )
         res.json(result)
     });
-    
+
 
      app.delete('/rooms/:id',async(req,res)=>{
       const {id} = req.params
