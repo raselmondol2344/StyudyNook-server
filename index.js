@@ -23,6 +23,7 @@ async function run() {
    
     await client.connect();
 
+    
     const db = client.db("studyNook") 
     const  roomsCollection = db.collection("rooms")   
 
