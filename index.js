@@ -105,6 +105,8 @@ async function run() {
       res.json(result)
     });
 
+
+
     app.delete('/rooms/:id', verifyToken, async (req, res) => {
       const { id } = req.params
       const result = await roomsCollection.deleteOne({ _id: new ObjectId(id) })
@@ -122,6 +124,7 @@ async function run() {
       const result = await bookingsCollection.find({ userId: userId }).toArray()
       res.json(result)
     });
+    
 
     app.delete('/bookings/:bookingId', verifyToken, async (req, res) => {
       const { bookingId } = req.params;
