@@ -52,7 +52,7 @@ const verifyToken = async (req, res, next) => {
 
 async function run() {
   try {
-    await client.connect();
+    // client.connect();
 
     const db = client.db("studyNook")
     const roomsCollection = db.collection("rooms")
@@ -132,7 +132,7 @@ async function run() {
       res.json(result);
     });
 
-    await client.db("admin").command({ ping: 1 });
+    //await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
 
@@ -144,6 +144,4 @@ app.get('/', (req, res) => {
   res.send('Server Is Runing!')
 })
 
-app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`)
-})
+module.exports = app;
